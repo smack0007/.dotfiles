@@ -1,8 +1,10 @@
 # Install
 sudo apt install -y \
   curl \
+  gcc \
   git \
   gnupg \
+  file \
   libsdl2-dev \
   lsb-release \
   software-properties-common \
