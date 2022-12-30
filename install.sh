@@ -3,10 +3,10 @@ sudo apt install -y \
   curl \
   git \
   gnupg \
-  stow \
   libsdl2-dev \
   lsb-release \
   software-properties-common \
+  stow \
   tree \
   unzip \
   wget \
