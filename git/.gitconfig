@@ -4,6 +4,9 @@ editor = nano
 [init]
 defaultBranch = main
 
+[pull]
+rebase = true
+
 [user]
 name = Zachary Snow
 email = zachary.snow@gmail.com
