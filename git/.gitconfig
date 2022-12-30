@@ -1,9 +1,38 @@
 [core]
-  editor = nano
+editor = nano
 
 [init]
-	defaultBranch = main
+defaultBranch = main
 
 [user]
-  name = Zachary Snow
-  email = zachary.snow@gmail.com
+name = Zachary Snow
+email = zachary.snow@gmail.com
+
+[alias]
+ac = commit -am
+alias = !git config --list | grep ^alias\\. | cut -c 7-
+br = branch -a
+brls = branch -a --list
+brrm = branch -d
+cm = commit -m
+cmhash = rev-parse HEAD --short
+co = checkout
+cob = checkout -b
+# Show list of files in a conflict state.
+conflicts = !git diff --name-only --diff-filter=U
+cp = cherry-pick
+find = "!git ls-files | grep -i"
+# git graph -10
+graph = log --oneline --graph --color --all --decorate
+last = "log -1 HEAD"
+# git ls -10
+ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+make-personal = !git config user.name smack0007 && git config user.email zachary.snow@gmail.com
+push-fwl = push --force-with-lease
+push-upstream = push --set-upstream
+remotes = remote -v
+spull = !git stash && git pull && git stash pop
+st = status -s
+sw = switch
+tag-version = "!f(){ git tag -a $1 -m '$1' && git push origin $1; };f"
+tmpl = "!f(){ git clone https://github.com/$1 $2 --depth 1 && cd $2 && rm -rf .git; };f"
