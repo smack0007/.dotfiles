@@ -11,4 +11,4 @@ export NVM_DIR="$HOME/.nvm"
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
-[ -f "~/.ssh/github_ed25519" ] && eval $(ssh-agent) && ssh-add ~/.ssh/github_ed25519
+[ -f ~/.ssh/github_ed25519 ] && eval $(ssh-agent) &>/dev/null && ssh-add ~/.ssh/github_ed25519 &>/dev/null
