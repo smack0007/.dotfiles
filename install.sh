@@ -1,12 +1,13 @@
 # Install
 sudo apt install -y \
   curl \
+  file \
   gcc \
   git \
   gnupg \
-  file \
   libsdl2-dev \
   lsb-release \
+  make \
   software-properties-common \
   stow \
   tree \

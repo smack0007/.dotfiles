@@ -10,11 +10,12 @@ function dotfiles-push() {
 }
 
 function e() {
-  if [[ $(grep microsoft /proc/version) ]]; then
+  if is_wsl; then
     explorer.exe $1
   else
     xdg-open $1
   fi
+  true
 }
 
 alias ll='ls -lA --color'
