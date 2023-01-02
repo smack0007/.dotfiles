@@ -1,3 +1,8 @@
+__SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+pushd $__SCRIPTDIR
+
+# TODO: Abstract out software installation.
+
 # Install
 sudo apt install -y \
   curl \
@@ -15,6 +20,17 @@ sudo apt install -y \
   wget \
   zsh
 
+# clang
+sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-15 100 
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 100
+
+# node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+# deno
+curl -fsSL https://deno.land/x/install/install.sh | sh
+
 # Add configuration symlinks
 stow git
 stow powerlevel10k
@@ -27,13 +43,5 @@ sudo chsh -s $(which zsh) $USER
 # powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
-# clang
-sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-15 100 
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 100
-
-# node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-
-# deno
-curl -fsSL https://deno.land/x/install/install.sh | sh
+popd
+unset __SCRIPTDIR
