@@ -10,10 +10,19 @@ function dotfiles-push() {
 }
 
 function e() {
-  if is_wsl; then
+  if [[ is_msys || is_wsl ]]; then
     explorer.exe $1
   else
     xdg-open $1
+  fi
+  true
+}
+
+function gitex() {
+  if [[ is_msys || is_wsl ]]; then
+    gitex.cmd $1
+  else
+    echo "gitex not implemented."
   fi
   true
 }

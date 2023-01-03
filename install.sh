@@ -14,7 +14,6 @@ sudo apt install -y \
   lsb-release \
   make \
   software-properties-common \
-  stow \
   tree \
   unzip \
   wget \
@@ -32,9 +31,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
 # Add configuration symlinks
-stow git
-stow powerlevel10k
-stow zsh
+ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/powerlevel10k/.p10k.zsh ~/.p10k.zsh
+ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
 
 # Add zsh as a login shell and set as default shell
 command -v zsh | sudo tee -a /etc/shells

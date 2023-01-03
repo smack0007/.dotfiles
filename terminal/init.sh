@@ -2,7 +2,7 @@ source ~/.dotfiles/terminal/aliases.sh
 source ~/.dotfiles/terminal/functions.sh
 
 # WSL adds the entire PATH from windows to the local PATH so just cut the fat
-[ is_wsl ] && PATH=$(sed ':a; N; $!ba; s/\n/:/g' ~/.dotfiles/terminal/wsl.path)
+if is_wsl; then PATH=$(sed ':a; N; $!ba; s/\n/:/g' ~/.dotfiles/terminal/wsl.path) fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
