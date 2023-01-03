@@ -1,0 +1,13 @@
+curl 
+file 
+gcc 
+git 
+gnupg 
+libsdl2-dev 
+lsb-release 
+make 
+software-properties-common 
+tree 
+unzip 
+wget 
+zsh

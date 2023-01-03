@@ -1,0 +1,15 @@
+clang
+gcc
+git
+htop
+make
+mesa-dri-drivers
+nano
+neofetch
+openssh
+redhat-lsb
+SDL2-devel
+unzip
+wget
+which
+zsh

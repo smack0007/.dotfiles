@@ -1,6 +1,10 @@
 source ~/.dotfiles/terminal/aliases.sh
 source ~/.dotfiles/terminal/functions.sh
 
+if [[ $(get_distro) == "Fedora" ]]; then
+  echo "Fedora"
+fi
+
 # WSL adds the entire PATH from windows to the local PATH so just cut the fat
 if is_wsl; then PATH=$(sed ':a; N; $!ba; s/\n/:/g' ~/.dotfiles/terminal/wsl.path) fi
 
