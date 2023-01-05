@@ -1,7 +1,13 @@
-# See https://gist.github.com/fworks/af4c896c9de47d827d4caa6fd7154b6b to install zsh
+#!/bin/sh
 
-# Update ~/.gitconfig to include ~/.dotfiles/git/.gitconfig
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Link .gitconfig
+git config --global include.path "$(cygpath --absolute --long-name --windows ~/.dotfiles/git/.gitconfig)"
+
+# Link .zshrc
 echo "source ~/.dotfiles/zsh/.zshrc" > ~/.zshrc
 
+# Get rid of error related to being unable to load bash completions
 mkdir -p ~/.config/git
 echo "" > ~/.config/git/git-prompt.sh
