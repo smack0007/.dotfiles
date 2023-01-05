@@ -191,20 +191,20 @@ prompt_dir() {
 prompt_status() {
   local -a symbols
 
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
-
-  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}\uf00d" # 
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}\uf0e7" # 
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{white}%}\uf013" # 
+  
+  [[ -n "$symbols" ]] && prompt_segment 245 default "$symbols"
 }
 
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_distro
-  prompt_status
   prompt_dir
   prompt_git
+  prompt_status
   prompt_end
 }
 
