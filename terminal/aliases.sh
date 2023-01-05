@@ -22,10 +22,11 @@ function e() {
 function gitex() {
   if [[ is_msys || is_wsl ]]; then
     gitex.cmd $1
+    true
   else
     echo "gitex not implemented."
-  fi
-  true
+    false
+  fi  
 }
 
 alias ll='ls -lA --color'
@@ -33,4 +34,13 @@ alias ll='ls -lA --color'
 function mcd() {
     mkdir -p $1
     cd $1
+}
+
+function winpath() {
+  if [[ is_msys ]]; then
+    cygpath --absolute --long-name --windows $1
+  else
+    echo "winpath not implemented."
+    false
+  fi
 }
