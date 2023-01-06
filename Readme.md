@@ -22,13 +22,6 @@ Windows Termnial:
 },
 ```
 
-### MSYS2
-
-```
-yes | pacman -S git
-git clone git@github.com:smack0007/.dotfiles.git ~/.dotfiles
-```
-
 ### WSL 
 
 ```
