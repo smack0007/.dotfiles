@@ -34,6 +34,52 @@ wsl --shutdown
 ```
 wsl --install Debian
 sudo apt install git
+
+# Copy .ssh keys into WSL
+chmod 600 ~/.ssh/github_ed25519*
+eval $(ssh-agent) && ssh-add ~/.ssh/github_ed25519
+git clone git@github.com:smack0007/.dotfiles.git ~/.dotfiles
+```
+
+### WSL Fedora
+
+```
+# https://dev.to/bowmanjd/install-fedora-on-windows-subsystem-for-linux-wsl-4b26
+
+# Get rootfs
+docker run --name fedora fedora:37
+docker export -o "C:\WSL\fedora-rootfs.tar" fedora
+docker stop fedora
+docker rm fedora
+
+# Import fedora
+wsl --import fedora "C:\WSL\fedora" "C:\wsl\fedora-rootfs.tar"
+wsl -d fedora
+
+dnf upgrade -y
+dnf install passwd sudo -y
+
+passwd root
+
+useradd zachary
+passwd zachary
+usermod -aG wheel zachary
+
+echo '[user]' >> /etc/wsl.conf
+echo 'default=zachary' >> /etc/wsl.conf
+
+# From windows
+wsl --terminate fedora
+rm D:\WSL\fedora-rootfs.tar
+wsl --set-default fedora
+
+# Back in fedora
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows:/mnt/c/Program Files/Microsoft VS Code/bin"
+sudo dnf install -y git openssh nano redhat-lsb stow wget which zsh
+
+# Copy .ssh keys into WSL
+chmod 600 ~/.ssh/github_ed25519*
+eval $(ssh-agent) && ssh-add ~/.ssh/github_ed25519
 git clone git@github.com:smack0007/.dotfiles.git ~/.dotfiles
 ```
 
