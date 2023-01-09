@@ -1,7 +1,6 @@
 source ~/.dotfiles/terminal/functions.sh
 
 DISTRO=$(get_distro)
-DISTRO=${DISTRO@L}
 PACKAGES=$(sed ':a; N; $!ba; s/\n/ /g' ~/.dotfiles/${DISTRO}.packages)
 
 case ${DISTRO} in

@@ -18,6 +18,6 @@ function get_distro() {
   if [[ $(grep MSYS_NT /proc/version) ]]; then
     echo "msys"
   else
-    lsb_release -a | grep "Distributor ID:" | cut -d':' -f2 | xargs echo
+    lsb_release -a | grep "Distributor ID:" | cut -d':' -f2 | tr '[:upper:]' '[:lower:]' | xargs echo
   fi
 }
