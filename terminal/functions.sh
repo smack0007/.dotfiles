@@ -7,7 +7,7 @@ function is_msys() {
 }
 
 function is_wsl() {
-  if [[ $(grep microsoft /proc/version) ]]; then
+  if [[ ${WSL_DISTRO_NAME} ]]; then
     true
   else
     false
