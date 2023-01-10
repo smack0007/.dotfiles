@@ -3,6 +3,7 @@ alias dotfiles-code="code ~/.dotfiles"
 alias dotfiles-gitex="pushd ~/.dotfiles > /dev/null && gitex && popd > /dev/null"
 alias dotfiles-install-packages="sh ~/.dotfiles/install-packages.sh"
 alias dotfiles-pull="pushd ~/.dotfiles > /dev/null && git pull && popd > /dev/null"
+alias dotfiles-spull="pushd ~/.dotfiles > /dev/null && git spull && popd > /dev/null"
 alias dotfiles-status="pushd ~/.dotfiles > /dev/null && git status -s && popd > /dev/null"
 
 function dotfiles-push() {
