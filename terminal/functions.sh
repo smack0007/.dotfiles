@@ -1,5 +1,5 @@
 function is_msys() {
-  if [[ $(grep MSYS_NT /proc/version) ]]; then
+  if [[ ${MSYS2_PATH} ]]; then
     true
   else
     false
