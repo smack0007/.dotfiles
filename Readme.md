@@ -1,5 +1,15 @@
 ## Installation
 
+### Fedora
+
+```
+sudo dnf install redhat-lsb
+# Copy .ssh keys into WSL
+chmod 600 ~/.ssh/github_ed25519*
+eval $(ssh-agent) && ssh-add ~/.ssh/github_ed25519
+git clone git@github.com:smack0007/.dotfiles.git ~/.dotfiles
+```
+
 ### Git Bash
 
 ```shell
