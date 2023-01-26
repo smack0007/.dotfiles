@@ -5,7 +5,15 @@ editor = nano
 defaultBranch = main
 
 [pull]
-rebase = true
+rebase = false
+
+[fetch]
+prune = false
+
+[rebase]
+autoStash = false
+autosquash = false
+updateRefs = false
 
 [user]
 name = Zachary Snow
