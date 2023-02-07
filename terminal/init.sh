@@ -1,6 +1,13 @@
 source ~/.dotfiles/terminal/aliases.sh
 source ~/.dotfiles/terminal/functions.sh
 
+if is_msys; then
+  # MSYS2 doesn't add VS Code to the path
+  if [[ ! ":$PATH:" == *":/c/Program Files/Microsoft VS Code/bin:"* ]]; then
+    PATH="$PATH:/c/Program Files/Microsoft VS Code/bin"
+  fi
+fi
+
 # WSL adds the entire PATH from windows to the local PATH so just cut the fat
 if is_wsl; then
   PATH=$(sed ':a; N; $!ba; s/\n/:/g' ~/.dotfiles/terminal/wsl.path)

@@ -21,6 +21,7 @@ sh ~/.dotfiles/install-git-bash.sh
 ```
 
 Windows Termnial:
+
 ```json
 {
   "commandline": "\"%PROGRAMFILES%\\Git\\usr\\bin\\zsh.exe\" --login -i -l",
@@ -32,7 +33,22 @@ Windows Termnial:
 },
 ```
 
-### WSL 
+### MSYS2
+
+`nano /etc/nsswitch.conf` and set `db_home: windows`
+
+```json
+{
+  "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64",
+  "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
+  "hidden": false,
+  "name": "MinGW64",
+  "icon": "C:/msys64/msys2.ico",
+  "startingDirectory": "D:\\"
+}
+```
+
+### WSL
 
 ```
 wsl --update
@@ -98,4 +114,3 @@ git clone git@github.com:smack0007/.dotfiles.git ~/.dotfiles
 ```
 sh ./install.sh
 ```
-
