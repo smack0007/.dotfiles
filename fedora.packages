@@ -12,4 +12,3 @@ SDL2-devel
 unzip
 wget
 which
-zsh
