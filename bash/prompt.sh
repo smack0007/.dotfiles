@@ -54,6 +54,10 @@ function prompt_distro() {
     "msys")
       distro_symbol=$'\ue70f'
       ;;
+
+    "ubuntu")
+      distro_symbol=$'\uf31c'
+      ;;
   esac
 
   prompt_segment $BLACK $WHITE " $distro_symbol "
