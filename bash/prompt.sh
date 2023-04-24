@@ -14,9 +14,7 @@ SEGMENT_SEPARATOR=$'\ue0b0'
 
 RETVAL=0
 
-function prompt_segment() {
-  history -a
-  
+function prompt_segment() { 
   local fg=$(tput setaf $1)
   local bg=$(tput setab $2)
   local seperator=""
@@ -120,4 +118,4 @@ function bash_prompt() {
   PS1="\n$(echo $(prompt)) "
 }
 
-export PROMPT_COMMAND=bash_prompt
+export PROMPT_COMMAND="history -a;bash_prompt"
