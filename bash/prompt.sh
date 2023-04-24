@@ -15,6 +15,8 @@ SEGMENT_SEPARATOR=$'\ue0b0'
 RETVAL=0
 
 function prompt_segment() {
+  history -a
+  
   local fg=$(tput setaf $1)
   local bg=$(tput setab $2)
   local seperator=""
