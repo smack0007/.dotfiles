@@ -8,7 +8,9 @@ nano
 neofetch
 openssh
 redhat-lsb
-SDL2-devel
+SDL2
+SDL2_image
+SDL2_ttf
 unzip
 wget
 which
