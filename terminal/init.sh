@@ -1,5 +1,5 @@
-source ~/.dotfiles/terminal/aliases.sh
 source ~/.dotfiles/terminal/functions.sh
+source ~/.dotfiles/terminal/aliases.sh
 
 if is_msys; then
   # MSYS2 doesn't add VS Code to the path

@@ -13,7 +13,7 @@ function dotfiles-push() {
 }
 
 function e() {
-  if [[ is_msys || is_wsl ]]; then
+  if is_msys || is_wsl; then
     explorer.exe $1
   else
     xdg-open $1
@@ -22,7 +22,7 @@ function e() {
 }
 
 function gitex() {
-  if [[ is_msys || is_wsl ]]; then
+  if is_msys || is_wsl; then
     gitex.cmd $1
     true
   else
