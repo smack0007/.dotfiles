@@ -51,6 +51,10 @@ function prompt_distro() {
       distro_symbol=$'\uf30a'
       ;;
     
+    "linuxmint")
+      distro_symbol=$'\uf30e'
+      ;;
+
     "msys")
       distro_symbol=$'\ue70f'
       ;;
