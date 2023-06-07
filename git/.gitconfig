@@ -43,6 +43,7 @@ make-personal = !git config user.name smack0007 && git config user.email zachary
 push-fwl = push --force-with-lease
 push-upstream = push --set-upstream
 remotes = remote -v
+setmodx = update-index --chmod=+x
 spull = !git stash && git pull && git stash pop
 st = status -s
 sw = switch
