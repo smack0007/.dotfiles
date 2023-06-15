@@ -6,6 +6,9 @@ if is_msys; then
   if [[ ! ":$PATH:" == *":/c/Program Files/Microsoft VS Code/bin:"* ]]; then
     PATH="$PATH:/c/Program Files/Microsoft VS Code/bin"
   fi
+
+  # Disable the feature where MSYS tries to convert paths for you
+  export MSYS_NO_PATHCONV=1
 fi
 
 # WSL adds the entire PATH from windows to the local PATH so just cut the fat
