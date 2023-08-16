@@ -102,6 +102,10 @@ prompt_distro() {
   local distro=$(get_distro)
 
   case ${distro} in
+    "darwin")
+      distro_symbol="\ue635"
+      ;;
+    
     "debian")
       distro_symbol="\ue77d"
       ;;

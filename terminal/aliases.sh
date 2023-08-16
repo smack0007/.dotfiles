@@ -15,6 +15,8 @@ function dotfiles-push() {
 function e() {
   if is_msys || is_wsl; then
     explorer.exe $1
+  elif is_macos; then
+    open $1
   else
     xdg-open $1
   fi
@@ -34,8 +36,8 @@ function gitex() {
 alias ll='ls -lA --color'
 
 function mcd() {
-    mkdir -p $1
-    cd $1
+  mkdir -p $1
+  cd $1
 }
 
 function winpath() {

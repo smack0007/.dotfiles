@@ -31,6 +31,13 @@ Windows Termnial:
 },
 ```
 
+### MacOS
+
+```shell
+git config --global include.path "~/.dotfiles/git/.gitconfig"
+echo "source $HOME/.dotfiles/zsh/.zshrc" > ~/.zshrc
+```
+
 ### MSYS2
 
 `nano /etc/nsswitch.conf` and set `db_home: windows`
