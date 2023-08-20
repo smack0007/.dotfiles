@@ -1,4 +1,4 @@
-funciton is_macos() {
+function is_macos() {
   if [[ "$(uname)" == "Darwin" ]]; then
     true
   else
