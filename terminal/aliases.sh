@@ -40,6 +40,15 @@ function mcd() {
   cd $1
 }
 
+function notify() {
+  if [[ is_macos ]]; then
+    osascript -e "display notification \"$2\" with title \"$1\""
+  else
+    echo "notify not implemented."
+    false
+  fi
+}
+
 function winpath() {
   if [[ is_msys ]]; then
     cygpath --absolute --long-name --windows $1
