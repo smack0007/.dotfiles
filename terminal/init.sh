@@ -1,6 +1,11 @@
 source ~/.dotfiles/terminal/functions.sh
 source ~/.dotfiles/terminal/aliases.sh
 
+if is_macos; then
+  # Use curl installed via Homebrew
+  PATH="$(brew --prefix)/opt/curl/bin:$PATH"
+fi
+
 if is_msys; then
   # MSYS2 doesn't add VS Code to the path
   if [[ ! ":$PATH:" == *":/c/Program Files/Microsoft VS Code/bin:"* ]]; then
