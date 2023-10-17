@@ -21,6 +21,14 @@ if is_wsl; then
   PATH=$(sed ':a; N; $!ba; s/\n/:/g' ~/.dotfiles/terminal/wsl.path)
 fi
 
+if [ -d "$HOME/.bun" ]; then
+  # completions
+  [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
 if [ -d "$HOME/.node" ]; then
   export NODE_PREFIX="$HOME/.node"
   export PATH="$NODE_PREFIX/bin:$PATH"
