@@ -118,6 +118,10 @@ prompt_distro() {
       distro_symbol="\ue70f"
       ;;
 
+    "ubuntu")
+      distro_symbol=$'\uf31c'
+      ;;
+
     "zorin")
       distro_symbol="\uf32f"
       ;;
