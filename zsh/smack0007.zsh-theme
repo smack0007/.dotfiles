@@ -117,6 +117,10 @@ prompt_distro() {
     "msys")
       distro_symbol="\ue70f"
       ;;
+
+    "zorin")
+      distro_symbol="\uf32f"
+      ;;
   esac
 
   prompt_segment white black ${distro_symbol}
