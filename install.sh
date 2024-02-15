@@ -4,8 +4,8 @@
 # Add configuration symlinks
 git config --global include.path "~/.dotfiles/git/.gitconfig"
 
-# Link alacritty config
-mkdir -p ~/.config/alacritty && echo 'import = [ "~/.dotfiles/.config/alacritty/alacritty.toml" ]' > ~/.config/alacritty/alacritty.toml
+# Link kitty config
+mkdir -p ~/.config/kitty && echo 'include ~/.dotfiles/.config/kitty/kitty.conf' > ~/.config/kitty/kitty.conf
 
 # Link .bashrc
 echo "source ~/.dotfiles/bash/.bashrc" > ~/.bash_profile
