@@ -23,6 +23,15 @@ function e() {
   true
 }
 
+function gedit() {
+  if is_msys || is_wsl; then
+    notepad.exe $1
+  else
+    gnome-text-editor $1
+  fi
+  true
+}
+
 function gitex() {
   if is_msys || is_wsl; then
     gitex.cmd $1
