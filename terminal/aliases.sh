@@ -26,6 +26,8 @@ function e() {
 function gedit() {
   if is_msys || is_wsl; then
     notepad.exe $1
+  elif is_macos; then
+    open -e $1
   else
     gnome-text-editor $1
   fi
