@@ -6,7 +6,7 @@ $DotfilesRoot = (Get-Item $ProfileRoot).Parent.FullName;
 $env:HOME = $env:USERPROFILE;
 
 # Add current directory to path
-$env:PATH = $ProfileRoot + ";" + $env:PATH;
+# $env:PATH = $ProfileRoot + ";" + $env:PATH;
 
 $colors = @{
     "hostBackground" = $Host.UI.RawUI.BackgroundColor;
