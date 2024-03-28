@@ -1,6 +1,6 @@
 $Profile = $MyInvocation.MyCommand.Path;
 $ProfileRoot = $PSScriptRoot;
-$CmdRoot = (Get-Item $ProfileRoot).Parent.FullName;
+$DotfilesRoot = (Get-Item $ProfileRoot).Parent.FullName;
 
 # Set the HOME environment variable for git
 $env:HOME = $env:USERPROFILE;
@@ -86,13 +86,13 @@ function global:prompt
 # Commands
 #
 
-function dotfiles-cd { Set-Location $CmdRoot; }
-function dotfiles-code { code $CmdRoot; }
-function dotfiles-explorer { explorer $CmdRoot; }
-function dotfiles-gitex { pushd $CmdRoot; gitex; popd; }
-function dotfiles-pull { pushd $CmdRoot; git pull; popd; }
-function dotfiles-push { param($message) pushd $CmdRoot; git add -A && git commit -m "$message" && git push origin master; popd; }
-function dotfiles-status { pushd $CmdRoot; git status -s; popd; }
+function dotfiles-cd { Set-Location $DotfilesRoot; }
+function dotfiles-code { code $DotfilesRoot; }
+function dotfiles-explorer { explorer $DotfilesRoot; }
+function dotfiles-gitex { pushd $DotfilesRoot; gitex; popd; }
+function dotfiles-pull { pushd $DotfilesRoot; git pull; popd; }
+function dotfiles-push { param($message) pushd $DotfilesRoot; git add -A && git commit -m "$message" && git push; popd; }
+function dotfiles-status { pushd $DotfilesRoot; git status -s; popd; }
 
 function env-get { param($key) $value = [System.Environment]::GetEnvironmentVariable($key); Write-Host $value; }
 Set-Alias -Name get-env -Value env-get;
