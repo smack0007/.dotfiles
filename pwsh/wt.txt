@@ -1,1 +1,0 @@
-"commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe -noe -nop -nol -f C:\\Users\\zacha\\.dotfiles\\pwsh\\init.ps1",

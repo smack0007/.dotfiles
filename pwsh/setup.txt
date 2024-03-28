@@ -1,0 +1,5 @@
+# Windows Terminal
+"commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe -noe -nop -nol -f C:\\Users\\zacha\\.dotfiles\\pwsh\\init.ps1",
+
+# Git Config
+git config --global core.sshCommand C:/Windows/System32/OpenSSH/ssh.exe
